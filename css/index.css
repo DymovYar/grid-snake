@@ -1,0 +1,80 @@
+@import url('animations.css');
+
+#game_board::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(18, 16, 16, 0.1);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    animation: flicker 0.15s infinite;
+    border-radius: 1.25vmin;
+}
+
+#game_board::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    border-radius: 1.25vmin;
+}
+
+#game_board * {
+    animation: textShadow 1.6s infinite;
+}
+
+
+* {
+    box-sizing: border-box;   
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: black;
+}
+
+#game_board {
+    width: 90vmin;
+    height: 90vmin;
+    position: relative;
+    
+    display: grid;
+    grid-template: repeat(21, 1fr) / repeat(21, 1fr);
+
+    background-color: #1F201F;
+    border-radius: 1.25vmin;
+    overflow: hidden;
+}
+
+.snake_segment {
+    border-radius: .75vmin;
+    border: .75vmin solid #32A956;
+}
+
+.snake_segment:nth-child(1) {
+    background-color: #32A956;
+}
+
+.food_piece {
+    border-radius: .75vmin;
+    background-color: #32A956;
+    animation: 1.6s infinite pulse, textShadow 1.6s infinite!important;
+}
