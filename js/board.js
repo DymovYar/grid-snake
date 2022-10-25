@@ -8,8 +8,8 @@ class Board {
 
     draw() {
         this.element.innerHTML = '';
-        this.element.style.gridTemplateColumns = `repeat(${this.size}, 1fr)`;
-        this.element.style.gridTemplateRows = `repeat(${this.size}, 1fr)`;
+        this.element.style.gridTemplateColumns = `repeat(${this.size}, 3.75vmin)`;
+        this.element.style.gridTemplateRows = `repeat(${this.size}, 3.75vmin)`;
     }
 
     drawObject(el) {

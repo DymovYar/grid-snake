@@ -1,6 +1,6 @@
 @import url('animations.css');
 
-#game_board::after {
+#game_container::after {
     content: " ";
     display: block;
     position: absolute;
@@ -16,7 +16,7 @@
     border-radius: 1.25vmin;
 }
 
-#game_board::before {
+#game_container::before {
     content: " ";
     display: block;
     position: absolute;
@@ -31,7 +31,7 @@
     border-radius: 1.25vmin;
 }
 
-#game_board * {
+#game_container * {
     animation: textShadow 1.6s infinite;
 }
 
@@ -51,16 +51,12 @@ body {
     background-color: black;
 }
 
-#game_board {
-    width: 90vmin;
-    height: 90vmin;
-    position: relative;
-    
+#game_board {    
     display: grid;
-    grid-template: repeat(21, 1fr) / repeat(21, 1fr);
+    grid-template: repeat(21, 3.75vmin) / repeat(21, 3.75vmin);
 
-    background-color: #1F201F;
-    border-radius: 1.25vmin;
+    border: #32A956 solid .5vmin;
+
     overflow: hidden;
 }
 
@@ -77,4 +73,28 @@ body {
     border-radius: .75vmin;
     background-color: #32A956;
     animation: 1.6s infinite pulse, textShadow 1.6s infinite!important;
+}
+
+#score_board {
+    width: 100%;
+    padding: 2.5vmin 0;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: #32A956;
+    font-size: 2.75vmin;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#game_container {
+    position: relative;
+
+    padding: 0 3.2vmin 3.2vmin 3.2vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #1F201F;
+    border-radius: 1.25vmin;
 }

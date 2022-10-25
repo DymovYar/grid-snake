@@ -1,6 +1,7 @@
 import Board from './board.js';
 import Snake from "./snake.js";
 import Food from "./food.js";
+import ScoreBoard from "./scoreBoard.js";
 
 class Game {
     constructor() {
@@ -15,6 +16,7 @@ class Game {
     }
 
     draw() {
+        ScoreBoard.draw();
         Board.draw();
         Snake.draw();
         Food.draw();
@@ -22,10 +24,11 @@ class Game {
 
     increseSpeed() {
         this.speed += 1;
+        ScoreBoard.lvl += 1;
     }
 
     increaseScore() {
-        this.score +=1;
+        ScoreBoard.score = this.score +=1;
 
         if (!Boolean(this.score % 5)) this.increseSpeed();
     }
